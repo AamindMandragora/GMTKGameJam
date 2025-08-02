@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmekmnr0y1yy2"]
+[gd_scene load_steps=17 format=3 uid="uid://exo2f2ejxctt"]
 
-[ext_resource type="PackedScene" uid="uid://73voyt3785y8" path="res://Scenes/player.tscn" id="1_ebmjs"]
-[ext_resource type="Texture2D" uid="uid://b1r7qq45uuk43" path="res://Assets/sprites/world_tileset.png" id="2_qxrlw"]
-[ext_resource type="Texture2D" uid="uid://hcsy21s5y0v1" path="res://Assets/sprites/Tiles - Beach edited.png" id="3_i6g32"]
-[ext_resource type="PackedScene" uid="uid://dcb3q100dlcal" path="res://Scenes/platform.tscn" id="3_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://eba1r72vm071" path="res://Scenes/kill_zone.tscn" id="5_wowpa"]
-[ext_resource type="Script" uid="uid://cklfb05brnh7v" path="res://Scripts/game_manager.gd" id="7_1l0tm"]
+[ext_resource type="Script" uid="uid://cklfb05brnh7v" path="res://Scripts/game_manager.gd" id="1_pnnky"]
+[ext_resource type="Texture2D" uid="uid://b1r7qq45uuk43" path="res://Assets/sprites/world_tileset.png" id="2_blpqv"]
+[ext_resource type="Texture2D" uid="uid://hcsy21s5y0v1" path="res://Assets/sprites/Tiles - Beach edited.png" id="3_1jlnc"]
+[ext_resource type="PackedScene" uid="uid://73voyt3785y8" path="res://Scenes/player.tscn" id="4_u40f0"]
+[ext_resource type="PackedScene" uid="uid://eba1r72vm071" path="res://Scenes/kill_zone.tscn" id="5_0x4y1"]
+[ext_resource type="PackedScene" uid="uid://dcb3q100dlcal" path="res://Scenes/platform.tscn" id="6_uqiic"]
+[ext_resource type="PackedScene" uid="uid://ica2wxou0qsi" path="res://Scenes/beach_ball.tscn" id="7_eopvx"]
+[ext_resource type="PackedScene" uid="uid://dgqhgi0lskkge" path="res://Scenes/goal.tscn" id="8_t27xo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
-texture = ExtResource("2_qxrlw")
+texture = ExtResource("2_blpqv")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -170,10 +172,10 @@ texture = ExtResource("2_qxrlw")
 2:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6g32"]
-texture = ExtResource("3_i6g32")
+texture = ExtResource("3_1jlnc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1l0tm"]
-texture = ExtResource("3_i6g32")
+texture = ExtResource("3_1jlnc")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -468,11 +470,11 @@ _data = {
 &"RESET": SubResource("Animation_i6g32")
 }
 
-[node name="Game" type="Node2D"]
+[node name="Level 1" type="Node2D"]
 
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("7_1l0tm")
+script = ExtResource("1_pnnky")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
@@ -483,7 +485,7 @@ layer_0/name = "Background"
 layer_0/tile_data = PackedInt32Array(-196608, 4, 0, -131072, 4, 1, -65536, 4, 1, -196607, 65540, 0, -131071, 65540, 1, -65535, 65540, 1, -196606, 65540, 0, -131070, 65540, 1, -65534, 65540, 1, -196605, 65540, 0, -131069, 65540, 1, -65533, 65540, 1, -196604, 65540, 0, -131068, 65540, 1, -65532, 65540, 1, -196603, 65540, 0, -131067, 65540, 1, -65531, 65540, 1, -196602, 131076, 0, -131066, 4, 4, -65530, 65540, 1, 0, 4, 1, 65536, 4, 1, 131072, 4, 1, 196608, 4, 1, 262144, 4, 1, 1, 65540, 1, 2, 65540, 1, 65538, 65540, 1, 65539, 65540, 1, 65540, 65540, 1, 131076, 65540, 1, 131077, 65540, 1, 131078, 65540, 1, 196614, 65540, 1, 65537, 65540, 1, 131073, 65540, 1, 196609, 65540, 1, 262145, 65540, 1, 131074, 65540, 1, 196610, 65540, 1, 262146, 65540, 1, 3, 65540, 1, 131075, 65540, 1, 196611, 65540, 1, 262147, 65540, 1, 4, 65540, 1, 196612, 65540, 1, 262148, 65540, 1, 5, 65540, 1, 65541, 65540, 1, 196613, 65540, 1, 262149, 65540, 1, 6, 65540, 1, 65542, 65540, 1, 262150, 65540, 1, -131063, 65540, 0, -65527, 65540, 1, 9, 65540, 1, 65545, 65540, 1, 131081, 65540, 1, 196617, 65540, 1, 262153, 65540, 1, -131062, 65540, 0, -65526, 65540, 1, 10, 65540, 1, 65546, 65540, 1, 131082, 65540, 1, 196618, 65540, 1, 262154, 65540, 1, -131061, 131076, 0, -65525, 131076, 1, 11, 131076, 1, 65547, 131076, 1, 131083, 131076, 1, 196619, 131076, 1, 262155, 131076, 1, -131064, 65540, 0, -65528, 65540, 1, 8, 65540, 1, 65544, 65540, 1, 131080, 65540, 1, 196616, 65540, 1, 262152, 65540, 1, -131065, 65540, 0, -65529, 65540, 1, 7, 65540, 1, 65543, 65540, 1, 131079, 65540, 1, 196615, 65540, 1, 262151, 65540, 1)
 layer_1/name = "MidGround"
 
-[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+[node name="Player" parent="." instance=ExtResource("4_u40f0")]
 z_index = 5
 position = Vector2(20, -116)
 
@@ -495,7 +497,7 @@ limit_bottom = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Kill Zone" parent="." instance=ExtResource("5_wowpa")]
+[node name="Kill Zone" parent="." instance=ExtResource("5_0x4y1")]
 position = Vector2(137, 180)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone"]
@@ -506,10 +508,10 @@ shape = SubResource("WorldBoundaryShape2D_i6g32")
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("3_wrm1d")]
+[node name="Platform" parent="Platforms" instance=ExtResource("6_uqiic")]
 position = Vector2(464, 35)
 
-[node name="Platform2" parent="Platforms" instance=ExtResource("3_wrm1d")]
+[node name="Platform2" parent="Platforms" instance=ExtResource("6_uqiic")]
 position = Vector2(501, -77)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
@@ -519,3 +521,9 @@ libraries = {
 autoplay = "Move"
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="Beach Ball" parent="." instance=ExtResource("7_eopvx")]
+position = Vector2(366, -186)
+
+[node name="Goal" parent="." instance=ExtResource("8_t27xo")]
+position = Vector2(501, -96)

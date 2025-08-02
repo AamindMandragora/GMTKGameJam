@@ -3,10 +3,10 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 
-const COYOTE_TIME = 0.075
+const COYOTE_TIME = 0.1
 var coyote_timer = 0.0
 
-const JUMP_BUFFER_TIME = 0.1
+const JUMP_BUFFER_TIME = 0.25
 var jump_buffer_timer = 0.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -60,5 +60,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	# Vertical movement
+	velocity.y = max(velocity.y, -300)
 
 	move_and_slide()

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754160350
+::res://::1754167434
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::1092465439390313599::1754142470::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::4335739915053957713::1754102348::1754102348::1::::<><><>0<>0<>7be44ff5fa2dcc93ebc01a1f8820251f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1754102348::0::1::::<><><>0<>0<><>::
@@ -16,7 +16,7 @@ hurt.wav::AudioStreamWAV/AudioStreamWAV::2990695742474918007::1754105936::175410
 jump.wav::AudioStreamWAV/AudioStreamWAV::4299187854809345032::1754105936::1754105937::1::::<><><>0<>0<>a96d16d7de6155cb977b7c8918c3eab7<>res://.godot/imported/jump.wav-37a1b6f890a57621d547e6e872aeb357.sample::
 power_up.wav::AudioStreamWAV/AudioStreamWAV::3136043189019135078::1754105936::1754105937::1::::<><><>0<>0<>33e9a61e9fc10e958e1bbdf312957def<>res://.godot/imported/power_up.wav-359f8a6678099d5ff83eaa154a913f3b.sample::
 tap.wav::AudioStreamWAV/AudioStreamWAV::6919635291441900175::1754105936::1754105937::1::::<><><>0<>0<>e8190bb06232da6a524135e4b21d39e7<>res://.godot/imported/tap.wav-4501df6b6e4c02632fcee28bfc6332c4.sample::
-::res://Assets/sprites/::1754160350
+::res://Assets/sprites/::1754164791
 coin.png::CompressedTexture2D/CompressedTexture2D::5670160283979965420::1754105936::1754105937::1::::<><><>0<>0<>aabf25595ecfd2a216edf941c68297e0<>res://.godot/imported/coin.png-5cebf264b7708a56a3ce47f5a666e217.ctex::
 fruit.png::CompressedTexture2D/CompressedTexture2D::8396629267477827748::1754105936::1754105937::1::::<><><>0<>0<>2bde14e1e82ba6b4b40fbcce637cd1f3<>res://.godot/imported/fruit.png-ffffa8b0de582e4e19865d6cd600e2dd.ctex::
 knight.png::CompressedTexture2D/CompressedTexture2D::1927384739682120419::1754105936::1754105937::1::::<><><>0<>0<>dd5f73ff9ef9b5abf0cee813ef71d481<>res://.godot/imported/knight.png-f2df08b890c4ea830c735d8e0f73a8e2.ctex::
@@ -26,19 +26,25 @@ slime_green.png::CompressedTexture2D/CompressedTexture2D::592769803172028411::17
 slime_purple.png::CompressedTexture2D/CompressedTexture2D::2181950976936332986::1754105936::1754105937::1::::<><><>0<>0<>bb4e03415d7a0f879348e6c7d05c0cd0<>res://.godot/imported/slime_purple.png-43dfa43f13125aefcc7affc07742c2cf.ctex::
 Tiles - Beach edited.png::CompressedTexture2D/CompressedTexture2D::496587885052129448::1754151612::1754151613::1::::<><><>0<>0<>3378629955795e588079a626346c3eee<>res://.godot/imported/Tiles - Beach edited.png-d2a7eb63cf897dedce9c33ad6e431db8.ctex::
 Tiles - Beach.png::CompressedTexture2D/CompressedTexture2D::2680655644075670161::1754150727::1754150727::1::::<><><>0<>0<>c2a1857b885e66566fa268e5ec04fbe2<>res://.godot/imported/Tiles - Beach.png-7704abc4d79a0f24ebe871340eb5fde5.ctex::
-tileset.png::CompressedTexture2D::3697872312650221272::1754102348::1754160350::1::::<><><>0<>0<>b7963cf88f9092ee2a27680064372b95<>res://.godot/imported/tileset.png-aa6605bdceb276569c47a80bbaa60ca1.ctex::
+tileset no bg.png::CompressedTexture2D/CompressedTexture2D::2485660875053662380::1754164787::1754164791::1::::<><><>0<>0<>f473de631d43d7640ae43876ecaab431<>res://.godot/imported/tileset no bg.png-59c34876f941f0a1810ede3de0a39c74.ctex::
+tileset.png::CompressedTexture2D/CompressedTexture2D::3697872312650221272::1754102348::1754160350::1::::<><><>0<>0<>b7963cf88f9092ee2a27680064372b95<>res://.godot/imported/tileset.png-aa6605bdceb276569c47a80bbaa60ca1.ctex::
 world_tileset.png::CompressedTexture2D/CompressedTexture2D::4248397443135482878::1754105936::1754105937::1::::<><><>0<>0<>16b2467394b5645a3c70020960bf6888<>res://.godot/imported/world_tileset.png-7d0351459d02dec97d7c98fe9a06c85b.ctex::
-::res://Scenes/::1754160340
-coin.tscn::PackedScene/PackedScene::5250372511157095139::1754160310::0::1::::<><><>0<>0<><>::uid://cm1wygpc0uhiq::::res://Assets/sprites/coin.png<>uid://2g6g043qfsus::::res://Scripts/coin.gd<>uid://d1b8hjtdpj8kv::::res://Assets/sounds/coin.wav
-enemy.tscn::PackedScene/PackedScene::1396439661679584768::1754160310::0::1::::<><><>0<>0<><>::uid://ipe3j4bbftep::::res://Assets/sprites/slime_green.png<>uid://3ylnqvuio5vj::::res://Scripts/enemy.gd<>uid://eba1r72vm071::::res://Scenes/kill_zone.tscn
-game.tscn::PackedScene/PackedScene::8010414995440689371::1754160310::0::1::::<><><>0<>0<><>::uid://73voyt3785y8::::res://Scenes/player.tscn<>uid://b1r7qq45uuk43::::res://Assets/sprites/world_tileset.png<>uid://hcsy21s5y0v1::::res://Assets/sprites/Tiles - Beach edited.png<>uid://dcb3q100dlcal::::res://Scenes/platform.tscn<>uid://eba1r72vm071::::res://Scenes/kill_zone.tscn<>uid://cklfb05brnh7v::::res://Scripts/game_manager.gd
-kill_zone.tscn::PackedScene/PackedScene::282867126533731534::1754160310::0::1::::<><><>0<>0<><>::uid://cyixt3vgd4e3s::::res://Scripts/kill_zone.gd
+::res://Scenes/::1754167437
+beach_ball.tscn::PackedScene::565688912755839924::1754167437::0::1::::<><><>0<>0<><>::uid://bbocqa8783bwm::::res://Assets/sprites/tileset no bg.png<>uid://dtqlnn8dq8vgq::::res://Scripts/beach_ball.gd
+coin.tscn::PackedScene::5250372511157095139::1754167437::0::1::::<><><>0<>0<><>::uid://cm1wygpc0uhiq::::res://Assets/sprites/coin.png<>uid://2g6g043qfsus::::res://Scripts/coin.gd<>uid://d1b8hjtdpj8kv::::res://Assets/sounds/coin.wav
+enemy.tscn::PackedScene::1396439661679584768::1754167437::0::1::::<><><>0<>0<><>::uid://ipe3j4bbftep::::res://Assets/sprites/slime_green.png<>uid://3ylnqvuio5vj::::res://Scripts/enemy.gd<>uid://eba1r72vm071::::res://Scenes/kill_zone.tscn
+goal.tscn::PackedScene::7613861350016408584::1754167437::0::1::::<><><>0<>0<><>::uid://c8axou0kcmv67::::res://Scripts/goal.gd<>uid://drvni0n3p2ftc::::res://Assets/sprites/fruit.png
+kill_zone.tscn::PackedScene::282867126533731534::1754167437::0::1::::<><><>0<>0<><>::uid://cyixt3vgd4e3s::::res://Scripts/kill_zone.gd
 music.tscn::PackedScene/PackedScene::3266648556928384372::1754142544::0::1::::<><><>0<>0<><>::uid://3mw5s7bmsjrk::::res://Assets/music/time_for_adventure.mp3
-platform.tscn::PackedScene/PackedScene::7303434169976910459::1754160310::0::1::::<><><>0<>0<><>::uid://n0igb0mgqkd2::::res://Assets/sprites/platforms.png
-player.tscn::PackedScene/PackedScene::2305146922721448849::1754160340::0::1::::<><><>0<>0<><>::res://player_sprite-removebg-preview.png<>uid://cmdwl02ywint4::::res://Scripts/player.gd<>uid://x38ndtgi0jf2::::res://Assets/sprites/player_sprite.png
-::res://Scripts/::1754150378
+platform.tscn::PackedScene::7303434169976910459::1754167437::0::1::::<><><>0<>0<><>::uid://n0igb0mgqkd2::::res://Assets/sprites/platforms.png
+player.tscn::PackedScene::2305146922721448849::1754167437::0::1::::<><><>0<>0<><>::uid://cmdwl02ywint4::::res://Scripts/player.gd<>uid://x38ndtgi0jf2::::res://Assets/sprites/player_sprite.png
+::res://Scenes/Levels/::1754167437
+Level1.tscn::PackedScene::8010414995440689371::1754167437::0::1::::<><><>0<>0<><>::uid://cklfb05brnh7v::::res://Scripts/game_manager.gd<>uid://b1r7qq45uuk43::::res://Assets/sprites/world_tileset.png<>uid://hcsy21s5y0v1::::res://Assets/sprites/Tiles - Beach edited.png<>uid://73voyt3785y8::::res://Scenes/player.tscn<>uid://eba1r72vm071::::res://Scenes/kill_zone.tscn<>uid://dcb3q100dlcal::::res://Scenes/platform.tscn<>uid://ica2wxou0qsi::::res://Scenes/beach_ball.tscn<>uid://dgqhgi0lskkge::::res://Scenes/goal.tscn
+::res://Scripts/::1754167368
+beach_ball.gd::GDScript/GDScript::8526571960449176408::1754165536::0::1::::<>CharacterBody2D<><>0<>0<><>::
 coin.gd::GDScript/GDScript::1909379345467295722::1754143354::0::1::::<>Area2D<><>0<>0<><>::
 enemy.gd::GDScript/GDScript::2015524663938015995::1754141409::0::1::::<>Node2D<><>0<>0<><>::
-game_manager.gd::GDScript/GDScript::5497744689315480073::1754143237::0::1::::<>Node<><>0<>0<><>::
+game_manager.gd::GDScript/GDScript::5497744689315480073::1754166123::0::1::::<>Node<><>0<>0<><>::
+goal.gd::GDScript::7090495788934205202::1754167368::0::1::::<>Area2D<><>0<>0<><>::
 kill_zone.gd::GDScript/GDScript::6475320561021742962::1754141543::0::1::::<>Area2D<><>0<>0<><>::
-player.gd::GDScript/GDScript::5622657397792238647::1754150378::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.gd::GDScript/GDScript::5622657397792238647::1754165417::0::1::::<>CharacterBody2D<><>0<>0<><>::
