@@ -1,8 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4mocbpionqda"]
+[gd_scene load_steps=14 format=3 uid="uid://d4mocbpionqda"]
 
 [ext_resource type="PackedScene" uid="uid://ckl4qj5al7wa6" path="res://Scenes/game_manager.tscn" id="1_kbcm5"]
 [ext_resource type="PackedScene" uid="uid://73voyt3785y8" path="res://Scenes/player.tscn" id="2_ms3sw"]
 [ext_resource type="Texture2D" uid="uid://hcsy21s5y0v1" path="res://Assets/sprites/Tiles - Beach edited.png" id="3_wadpb"]
+[ext_resource type="PackedScene" uid="uid://dlrp7gi1771s" path="res://Scenes/lever.tscn" id="4_wadpb"]
+[ext_resource type="PackedScene" uid="uid://dgqhgi0lskkge" path="res://Scenes/goal.tscn" id="5_0713x"]
+[ext_resource type="Script" uid="uid://bs1oy81h78lgo" path="res://Scripts/cloud_layer.gd" id="6_rdadd"]
+[ext_resource type="Texture2D" uid="uid://dpaac70gxualf" path="res://Assets/sprites/beach1.png" id="6_vcbyy"]
+[ext_resource type="Texture2D" uid="uid://csdka6a0q16bs" path="res://Assets/sprites/beach2.png" id="7_rdadd"]
+[ext_resource type="Texture2D" uid="uid://bpipq2u6vn5l7" path="res://Assets/sprites/beach3.png" id="8_gnd1d"]
+[ext_resource type="Texture2D" uid="uid://cdfjq2ofh7rup" path="res://Assets/sprites/beach4.png" id="9_noenv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0713x"]
 
@@ -261,6 +268,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bmrvr")
 
 [node name="Level Init" type="Node2D"]
+position = Vector2(292, -189)
 
 [node name="Game Manager" parent="." instance=ExtResource("1_kbcm5")]
 unique_name_in_owner = true
@@ -284,6 +292,7 @@ limit_bottom = 0
 [node name="Kill Zones" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Kill Zones"]
+position = Vector2(95, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/StaticBody2D"]
 position = Vector2(0, 24)
@@ -292,3 +301,53 @@ shape = SubResource("WorldBoundaryShape2D_0713x")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d2uvy")
 format = 2
+
+[node name="Lever" parent="." instance=ExtResource("4_wadpb")]
+position = Vector2(109, -63)
+
+[node name="Goal" parent="." instance=ExtResource("5_0713x")]
+position = Vector2(179, -69)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(290, -185)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1024, 0)
+script = ExtResource("6_rdadd")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(222, -103)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vcbyy")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(290, -185)
+motion_scale = Vector2(0.25, 1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(222, -103)
+scale = Vector2(2, 2)
+texture = ExtResource("7_rdadd")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(290, -185)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(222, -103)
+scale = Vector2(2, 2)
+texture = ExtResource("8_gnd1d")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 100
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(512, -288)
+scale = Vector2(2, 2)
+texture = ExtResource("9_noenv")
