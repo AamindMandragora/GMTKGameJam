@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://p1oid7t1qj5a"]
+
+[ext_resource type="Script" uid="uid://dqyjjcbmf5by5" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://ddlcpd8sqsnhj" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://b2thpj0ujsjju" path="res://Assets/sprites/beach0.png" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://x38ndtgi0jf2" path="res://Assets/sprites/player_sprite.png" id="4_n45e2"]
+[ext_resource type="Texture2D" uid="uid://be4tfqnxjrov6" path="res://Assets/sprites/food.png" id="5_opfnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[node name="Main Menu" type="Container"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Button Manager" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Button Manager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 59.0
+offset_right = 192.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Start"
+
+[node name="Label" type="Label" parent="Button Manager"]
+layout_mode = 2
+offset_left = -240.0
+offset_top = -193.0
+offset_right = 255.0
+offset_bottom = -132.0
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 60
+text = "Loop Pool"
+
+[node name="Sprite2D" type="Sprite2D" parent="Button Manager"]
+z_index = -1
+scale = Vector2(2.25, 2.22222)
+texture = ExtResource("3_1ehe0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Button Manager"]
+position = Vector2(-304, 160)
+scale = Vector2(2.25, 2.22222)
+texture = ExtResource("4_n45e2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Button Manager"]
+position = Vector2(336, 160)
+scale = Vector2(5.125, 5.06173)
+texture = ExtResource("5_opfnp")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]

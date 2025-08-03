@@ -4,11 +4,15 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("You died!")
+	
 	Engine.time_scale = 0.5
-	body.get_node("CollisionShape2D").queue_free()
+	body.get_node("CollisionShape2D").disabled = true
 	timer.start()
 
 func _on_timer_timeout() -> void:
+	
 	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	# Reset all nodes in the "resettable" group
+	for node in get_tree().get_nodes_in_group("resettable"):
+		if node.has_method("reset_to_start"):
+			node.reset_to_start()

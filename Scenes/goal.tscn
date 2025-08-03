@@ -1,17 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgqhgi0lskkge"]
+[gd_scene load_steps=9 format=3 uid="uid://dgqhgi0lskkge"]
 
 [ext_resource type="Script" uid="uid://c8axou0kcmv67" path="res://Scripts/goal.gd" id="1_s0pnd"]
-[ext_resource type="Texture2D" uid="uid://drvni0n3p2ftc" path="res://Assets/sprites/fruit.png" id="2_s0pnd"]
+[ext_resource type="Texture2D" uid="uid://be4tfqnxjrov6" path="res://Assets/sprites/food.png" id="2_s0pnd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lgk0"]
 atlas = ExtResource("2_s0pnd")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in2gb"]
+atlas = ExtResource("2_s0pnd")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egnc4"]
+atlas = ExtResource("2_s0pnd")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmc6d"]
+atlas = ExtResource("2_s0pnd")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_in2gb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2lgk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in2gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egnc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmc6d")
 }],
 "loop": true,
 "name": &"default",
@@ -28,6 +49,8 @@ script = ExtResource("1_s0pnd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_in2gb")
+autoplay = "default"
+frame_progress = 0.347999
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)

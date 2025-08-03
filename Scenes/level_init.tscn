@@ -21,7 +21,8 @@ shader_parameter/scroll_offset = Vector2(0, 0)
 shader_parameter/alpha_factor = 0.5
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kdvgm"]
-distance = -597.0
+normal = Vector2(-0.00862037, -0.999963)
+distance = -221.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmrvr"]
 texture = ExtResource("3_wadpb")
@@ -348,6 +349,7 @@ script = ExtResource("8_kdvgm")
 position = Vector2(17, -69)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -16)
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_bottom = 576

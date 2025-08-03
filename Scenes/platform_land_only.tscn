@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88gohrphwrph"]
+
+[ext_resource type="Texture2D" uid="uid://hcsy21s5y0v1" path="res://Assets/sprites/Tiles - Beach edited.png" id="1_3rga8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(96, 18)
+
+[node name="Platform" type="AnimatableBody2D"]
+position = Vector2(4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3rga8")
+region_enabled = true
+region_rect = Rect2(272, 288, 112, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true

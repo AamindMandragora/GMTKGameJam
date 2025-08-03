@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -345.0
 const MIN_JUMP_VELOCITY = JUMP_VELOCITY
-const WATER_JUMP_MULTIPLIER = 1.2
+const WATER_JUMP_MULTIPLIER = 1.25
 const WATER_MOVEMENT_MULTIPLIER = 0.9
 
 const COYOTE_TIME = 0.1
@@ -25,6 +25,7 @@ func _ready() -> void:
 func reset_to_start():
 	position = start_position
 	velocity = Vector2.ZERO
+	get_node("CollisionShape2D").disabled = false
 
 func _physics_process(delta: float) -> void:
 	
