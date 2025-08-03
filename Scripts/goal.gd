@@ -4,7 +4,8 @@ const FILE_PREFIX = "res://Scenes/Levels/level_"
 @onready var game_manager: Node = %"Game Manager"
 
 func _on_body_entered(body: Node2D) -> void:
+	print("Hit goal.")
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var next_level_number = current_scene_file.to_int() + 1
-	var next_level_path = FILE_PREFIX + str(next_level_number) + ".tcsn"
+	var next_level_path = FILE_PREFIX + str(next_level_number) + ".tscn"
 	game_manager.next_level(next_level_path)

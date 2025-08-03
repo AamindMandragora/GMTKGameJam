@@ -470,7 +470,7 @@ _data = {
 &"RESET": SubResource("Animation_i6g32")
 }
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 2" type="Node2D"]
 
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -487,7 +487,7 @@ layer_1/name = "MidGround"
 
 [node name="Player" parent="." instance=ExtResource("4_u40f0")]
 z_index = 5
-position = Vector2(20, -116)
+position = Vector2(54, -212)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -23)
@@ -507,9 +507,6 @@ shape = SubResource("WorldBoundaryShape2D_i6g32")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Platforms" type="Node" parent="."]
-
-[node name="Platform" parent="Platforms" instance=ExtResource("6_uqiic")]
-position = Vector2(464, 35)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("6_uqiic")]
 position = Vector2(501, -77)

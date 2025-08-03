@@ -506,9 +506,6 @@ position = Vector2(280, -80)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("6_7r2dd")]
-position = Vector2(464, 35)
-
 [node name="Platform2" parent="Platforms" instance=ExtResource("6_7r2dd")]
 position = Vector2(501, -77)
 
