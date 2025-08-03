@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d4mocbpionqda"]
+[gd_scene load_steps=19 format=3 uid="uid://d4mocbpionqda"]
 
 [ext_resource type="PackedScene" uid="uid://ckl4qj5al7wa6" path="res://Scenes/game_manager.tscn" id="1_kbcm5"]
 [ext_resource type="PackedScene" uid="uid://73voyt3785y8" path="res://Scenes/player.tscn" id="2_ms3sw"]
@@ -9,9 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://dpaac70gxualf" path="res://Assets/sprites/beach1.png" id="6_vcbyy"]
 [ext_resource type="Texture2D" uid="uid://csdka6a0q16bs" path="res://Assets/sprites/beach2.png" id="7_rdadd"]
 [ext_resource type="Texture2D" uid="uid://bpipq2u6vn5l7" path="res://Assets/sprites/beach3.png" id="8_gnd1d"]
+[ext_resource type="Script" uid="uid://bexmtivongav8" path="res://Scripts/water_image.gd" id="8_kdvgm"]
+[ext_resource type="Shader" uid="uid://0l3ia0x5iakw" path="res://Assets/shaders/water_shader.gdshader" id="8_n4ihl"]
+[ext_resource type="PackedScene" uid="uid://eba1r72vm071" path="res://Scenes/kill_zone.tscn" id="8_noenv"]
+[ext_resource type="Texture2D" uid="uid://sgdaniciyioe" path="res://Assets/sprites/water.png" id="9_he0cd"]
 [ext_resource type="Texture2D" uid="uid://cdfjq2ofh7rup" path="res://Assets/sprites/beach4.png" id="9_noenv"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0713x"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4ihl"]
+shader = ExtResource("8_n4ihl")
+shader_parameter/scroll_offset = Vector2(0, 0)
+shader_parameter/alpha_factor = 0.5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kdvgm"]
+distance = -597.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmrvr"]
 texture = ExtResource("3_wadpb")
@@ -268,50 +278,15 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bmrvr")
 
 [node name="Level Init" type="Node2D"]
-position = Vector2(292, -189)
+position = Vector2(292, 387)
 
 [node name="Game Manager" parent="." instance=ExtResource("1_kbcm5")]
 unique_name_in_owner = true
 
-[node name="Player" parent="." instance=ExtResource("2_ms3sw")]
-position = Vector2(17, -69)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-limit_left = 0
-limit_bottom = 0
-
-[node name="Platforms" type="Node" parent="."]
-
-[node name="Coins" type="Node" parent="."]
-
-[node name="Enemies" type="Node" parent="."]
-
-[node name="Beach Balls" type="Node" parent="."]
-
-[node name="Kill Zones" type="Node" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Kill Zones"]
-position = Vector2(95, -5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/StaticBody2D"]
-position = Vector2(0, 24)
-shape = SubResource("WorldBoundaryShape2D_0713x")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_d2uvy")
-format = 2
-
-[node name="Lever" parent="." instance=ExtResource("4_wadpb")]
-position = Vector2(109, -63)
-
-[node name="Goal" parent="." instance=ExtResource("5_0713x")]
-position = Vector2(179, -69)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(290, -185)
+position = Vector2(290, 391)
 motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(1024, 0)
 script = ExtResource("6_rdadd")
@@ -322,7 +297,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("6_vcbyy")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(290, -185)
+position = Vector2(290, 391)
 motion_scale = Vector2(0.25, 1)
 motion_mirroring = Vector2(1024, 0)
 
@@ -332,7 +307,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("7_rdadd")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(290, -185)
+position = Vector2(290, 391)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1024, 0)
 
@@ -345,9 +320,59 @@ texture = ExtResource("8_gnd1d")
 layer = 100
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(0, 576)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
 position = Vector2(512, -288)
 scale = Vector2(2, 2)
 texture = ExtResource("9_noenv")
+
+[node name="Water_Overlay" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Water_Image" type="TextureRect" parent="Water_Overlay"]
+material = SubResource("ShaderMaterial_n4ihl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("9_he0cd")
+stretch_mode = 1
+script = ExtResource("8_kdvgm")
+
+[node name="Player" parent="." instance=ExtResource("2_ms3sw")]
+position = Vector2(17, -69)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_bottom = 576
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Beach Balls" type="Node" parent="."]
+
+[node name="Kill Zones" type="Node" parent="."]
+
+[node name="Kill Zone" parent="Kill Zones" instance=ExtResource("8_noenv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zones/Kill Zone"]
+shape = SubResource("WorldBoundaryShape2D_kdvgm")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_d2uvy")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262154, 0, 0, -262153, 65536, 0, -262152, 65536, 0, -262151, 65536, 0, -262150, 65536, 0, -262149, 131072, 0, -196613, 131072, 1, -131077, 131072, 1, -65541, 131072, 1, -5, 131072, 1, 65531, 131072, 1, 131067, 131072, 1, 196603, 131072, 1, 262139, 0, 4, 262140, 65536, 0, 262141, 65536, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 4, 131075, 0, 1, 65539, 0, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0)
+
+[node name="Lever" parent="." instance=ExtResource("4_wadpb")]
+position = Vector2(190, 40)
+
+[node name="Goal" parent="." instance=ExtResource("5_0713x")]
+position = Vector2(179, -69)

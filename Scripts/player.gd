@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 450.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -400.0
+const MIN_JUMP_VELOCITY = JUMP_VELOCITY
 
 const COYOTE_TIME = 0.1
 var coyote_timer = 0.0
@@ -62,6 +63,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	# Vertical movement
-	velocity.y = max(velocity.y, -300)
+	velocity.y = max(velocity.y, MIN_JUMP_VELOCITY)
 
 	move_and_slide()

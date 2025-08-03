@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="GMTK Game Jam"
+run/main_scene="uid://d4mocbpionqda"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Music="*res://Scenes/music.tscn"
+Globals="*res://Scripts/globals.gd"
 
 [dotnet]
 
