@@ -24,6 +24,10 @@ Globals="*res://Scripts/globals.gd"
 
 project/assembly_name="GMTK Game Jam"
 
+[global_group]
+
+resettable=""
+
 [input]
 
 jump={

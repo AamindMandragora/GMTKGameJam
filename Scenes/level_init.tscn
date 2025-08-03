@@ -332,6 +332,7 @@ texture = ExtResource("9_noenv")
 layer = 100
 
 [node name="Water_Image" type="TextureRect" parent="Water_Overlay"]
+visible = false
 material = SubResource("ShaderMaterial_n4ihl")
 anchors_preset = 15
 anchor_right = 1.0
@@ -347,7 +348,7 @@ script = ExtResource("8_kdvgm")
 position = Vector2(17, -69)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 limit_left = 0
 limit_bottom = 576
 
@@ -369,10 +370,10 @@ shape = SubResource("WorldBoundaryShape2D_kdvgm")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_d2uvy")
 format = 2
-layer_0/tile_data = PackedInt32Array(-262154, 0, 0, -262153, 65536, 0, -262152, 65536, 0, -262151, 65536, 0, -262150, 65536, 0, -262149, 131072, 0, -196613, 131072, 1, -131077, 131072, 1, -65541, 131072, 1, -5, 131072, 1, 65531, 131072, 1, 131067, 131072, 1, 196603, 131072, 1, 262139, 0, 4, 262140, 65536, 0, 262141, 65536, 0, 262142, 65536, 0, 262143, 65536, 0, 196608, 65536, 0, 196609, 65536, 0, 196610, 65536, 0, 196611, 65536, 4, 131075, 0, 1, 65539, 0, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0)
 
 [node name="Lever" parent="." instance=ExtResource("4_wadpb")]
 position = Vector2(190, 40)
+collision_mask = 2
 
 [node name="Goal" parent="." instance=ExtResource("5_0713x")]
 position = Vector2(179, -69)

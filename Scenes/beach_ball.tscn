@@ -55,7 +55,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in2gb"]
 
-[node name="Beach Ball" type="CharacterBody2D"]
+[node name="Beach Ball" type="CharacterBody2D" groups=["resettable"]]
 script = ExtResource("1_s0pnd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -63,7 +63,7 @@ position = Vector2(0, -10)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_2lgk0")
 autoplay = "default"
-frame_progress = 0.845712
+frame_progress = 0.62061
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
